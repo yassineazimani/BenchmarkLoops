@@ -1,0 +1,17 @@
+Benchmark                            Mode  Cnt     Score     Error  Units
+App.traitementsAvecForClassique      avgt   10  1764,844 ± 231,719  ms/op
+App.traitementsAvecIterateurs        avgt   10  2427,694 ± 312,053  ms/op
+App.traitementsAvecParallelsStreams  avgt   10  5161,469 ± 742,782  ms/op
+App.traitementsAvecStreams           avgt   10  3290,128 ± 480,789  ms/op
+
+Le mode est average time, donc plus le score est petit (temps moyen pour chaque opération), mieux c'est.
+
+Classement final :
+
+1. App.traitementsAvecForClassique
+2. App.traitementsAvecIterateurs
+3. App.traitementsAvecStreams
+4. App.traitementsAvecParallelsStreams
+
+Le gain de performances en passant d'un traitement avec des streams à un traitement avec des boucles classiques
+est de l'ordre de 3 (5161 / 1765 =~ 3).
