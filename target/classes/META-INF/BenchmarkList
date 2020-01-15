@@ -1,4 +1,4 @@
-JMH S 13 benchmark.App S 59 benchmark.generated.App_traitementsAvecForClassique_jmhTest S 27 traitementsAvecForClassique S 11 AverageTime E A 1 1 1 E I 1 3 E E I 1 5 E E I 1 2 E E E E E E U 12 MILLISECONDS E E 
-JMH S 13 benchmark.App S 54 benchmark.generated.App_traitementsAvecStreams_jmhTest S 22 traitementsAvecStreams S 11 AverageTime E A 1 1 1 E I 1 3 E E I 1 5 E E I 1 2 E E E E E E U 12 MILLISECONDS E E 
 JMH S 13 benchmark.App S 63 benchmark.generated.App_traitementsAvecParallelsStreams_jmhTest S 31 traitementsAvecParallelsStreams S 11 AverageTime E A 1 1 1 E I 1 3 E E I 1 5 E E I 1 2 E E E E E E U 12 MILLISECONDS E E 
 JMH S 13 benchmark.App S 57 benchmark.generated.App_traitementsAvecIterateurs_jmhTest S 25 traitementsAvecIterateurs S 11 AverageTime E A 1 1 1 E I 1 3 E E I 1 5 E E I 1 2 E E E E E E U 12 MILLISECONDS E E 
+JMH S 13 benchmark.App S 59 benchmark.generated.App_traitementsAvecForClassique_jmhTest S 27 traitementsAvecForClassique S 11 AverageTime E A 1 1 1 E I 1 3 E E I 1 5 E E I 1 2 E E E E E E U 12 MILLISECONDS E E 
+JMH S 13 benchmark.App S 54 benchmark.generated.App_traitementsAvecStreams_jmhTest S 22 traitementsAvecStreams S 11 AverageTime E A 1 1 1 E I 1 3 E E I 1 5 E E I 1 2 E E E E E E U 12 MILLISECONDS E E 
