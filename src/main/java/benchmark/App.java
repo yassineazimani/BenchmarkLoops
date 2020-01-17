@@ -21,6 +21,7 @@ import org.openjdk.jmh.runner.RunnerException;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
@@ -60,21 +61,33 @@ public class App {
                 && p.getVoitures().stream().anyMatch(v -> v.getCouleur().equals("blanc")))
                 .collect(Collectors.toList());
             personnes.stream().forEach(p -> {
-                p.getAnimaux().stream().forEach(a -> {});
-                p.getVoitures().stream().forEach(v -> {});
-                p.getEntreprise().getDirigeants().forEach(d -> {});
+                p.getAnimaux().stream().forEach(a -> {
+                    a.getNom();
+                });
+                p.getVoitures().stream().forEach(v -> {
+                    v.getCouleur();
+                });
+                p.getEntreprise().getDirigeants().forEach(d -> {
+                    d.getNom();
+                });
             });
     }// traitementsAvecStreams()
 
     @Benchmark
     public static void traitementsAvecParallelsStreams(){
-        personnes.parallelStream().filter(p -> p.getAge() > 15
+        Collections.synchronizedList(personnes).parallelStream().filter(p -> p.getAge() > 15
                 && p.getVoitures().stream().anyMatch(v -> v.getCouleur().equals("blanc")))
                 .collect(Collectors.toList());
-        personnes.parallelStream().forEach(p -> {
-            p.getAnimaux().stream().forEach(a -> {});
-            p.getVoitures().stream().forEach(v -> {});
-            p.getEntreprise().getDirigeants().forEach(d -> {});
+        Collections.synchronizedList(personnes).parallelStream().forEach(p -> {
+            p.getAnimaux().stream().forEach(a -> {
+                a.getNom();
+            });
+            p.getVoitures().stream().forEach(v -> {
+                v.getCouleur();
+            });
+            p.getEntreprise().getDirigeants().forEach(d -> {
+                d.getNom();
+            });
         });
     }// traitementsAvecParallelsStreams()
 
@@ -87,9 +100,9 @@ public class App {
             }
         }
         for(Personne p : personnes){
-            for(Animal a : p.getAnimaux()){}
-            for(Voiture v : p.getVoitures()){}
-            for(Personne d : p.getEntreprise().getDirigeants()){}
+            for(Animal a : p.getAnimaux()){ a.getNom(); }
+            for(Voiture v : p.getVoitures()){ v.getCouleur(); }
+            for(Personne d : p.getEntreprise().getDirigeants()){ d.getNom(); }
         }
     }// traitementsAvecIterateurs()
 
@@ -105,9 +118,9 @@ public class App {
 
         for(int i = 0; i < personnes.size(); ++i){
             Personne p = personnes.get(i);
-            for(int a = 0; a < p.getAnimaux().size(); ++a){}
-            for(int v = 0; v < p.getVoitures().size(); ++v){}
-            for(int d = 0; d < p.getEntreprise().getDirigeants().size(); ++d){}
+            for(int a = 0; a < p.getAnimaux().size(); ++a){ p.getAnimaux().get(a).getNom(); }
+            for(int v = 0; v < p.getVoitures().size(); ++v){ p.getVoitures().get(v).getCouleur(); }
+            for(int d = 0; d < p.getEntreprise().getDirigeants().size(); ++d){ p.getEntreprise().getDirigeants().get(d).getNom(); }
         }
     }// traitementsAvecForClassique()
 

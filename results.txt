@@ -1,17 +1,11 @@
+REMEMBER: The numbers below are just data. To gain reusable insights, you need to follow up on
+why the numbers are the way they are. Use profilers (see -prof, -lprof), design factorial
+experiments, perform baseline and negative tests that provide experimental control, make sure
+the benchmarking environment is safe on JVM/OS/HW level, ask for reviews from the domain experts.
+Do not assume the numbers tell you what you want them to tell.
+
 Benchmark                            Mode  Cnt     Score     Error  Units
-App.traitementsAvecForClassique      avgt   10  1764,844 ± 231,719  ms/op
-App.traitementsAvecIterateurs        avgt   10  2427,694 ± 312,053  ms/op
-App.traitementsAvecParallelsStreams  avgt   10  5161,469 ± 742,782  ms/op
-App.traitementsAvecStreams           avgt   10  3290,128 ± 480,789  ms/op
-
-Le mode est average time, donc plus le score est petit (temps moyen pour chaque opération), mieux c'est.
-
-Classement final :
-
-1. App.traitementsAvecForClassique
-2. App.traitementsAvecIterateurs
-3. App.traitementsAvecStreams
-4. App.traitementsAvecParallelsStreams
-
-Le gain de performances en passant d'un traitement avec des streams à un traitement avec des boucles classiques
-est de l'ordre de 3 (5161 / 1765 =~ 3).
+App.traitementsAvecForClassique      avgt   10  2041,731 ± 228,811  ms/op
+App.traitementsAvecIterateurs        avgt   10  2260,888 ± 259,582  ms/op
+App.traitementsAvecParallelsStreams  avgt   10  4799,002 ± 497,817  ms/op
+App.traitementsAvecStreams           avgt   10  3296,593 ± 568,863  ms/op
